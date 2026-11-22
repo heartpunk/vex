@@ -8769,8 +8769,8 @@ void codegen_LAHF ( void  )
 }
 
 
-/* A successful CMPXCHG leaves the accumulator unchanged.  In particular,
-   writing EAX on success would incorrectly clear the high half of RAX. */
+/* A successful memory CMPXCHG leaves the accumulator unchanged.  Writing
+   EAX on success would incorrectly clear the high half of RAX. */
 static void putCmpxchgRAX ( Int size, IRTemp cond, IRTemp acc, IRTemp dest )
 {
    if (size == 4) {
